@@ -44,15 +44,15 @@ def load_model():
 
 model = load_model()
 
-# --- Interfaz Streamlit ---
-st.title("Generador de Dígitos Manuscritos (CVAE)")
-st.write("Selecciona un dígito (0–9) para generar 5 imágenes similares.")
+st.title("Handwritten Digit Generator (CVAE)")
+st.write("Select a digit (0–9) to generate 5 diverse handwritten-style images.")
 
-digit = st.selectbox("Elige un dígito:", list(range(10)))
-generate = st.button("Generar imágenes")
+digit = st.selectbox("Choose a digit:", list(range(10)))
+generate = st.button("Generate Images")
 
 if generate:
-    st.subheader(f"Imágenes generadas para el dígito {digit}")
+    st.subheader(f"Generated images for digit {digit}")
+
 
     # Crear etiqueta one-hot
     y = torch.zeros(1, 10)
